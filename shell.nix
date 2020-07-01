@@ -1,6 +1,4 @@
-let
-  unstable = import <unstable> { };
-  hsPkgs = import ./.;
+let hsPkgs = import ./.;
 in hsPkgs.shellFor {
   withHoogle = true;
   tools = {
