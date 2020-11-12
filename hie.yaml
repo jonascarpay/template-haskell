@@ -4,7 +4,7 @@ cradle:
     #   config: {cradle: {none: }}
 
     - path: "src"
-      config: {cradle: {cabal: {component: "lib:NAME"}}}
+      config: {cradle: {cabal: {component: "lib:PKGNAME"}}}
 
-    # - path: "app"
-    #   config: {cradle: {cabal: {component: "NAME:NAME"}}}
+    - path: "app"
+      config: {cradle: {cabal: {component: "PKGNAME:PKGNAME"}}}

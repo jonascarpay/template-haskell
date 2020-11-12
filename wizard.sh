@@ -4,9 +4,22 @@ defname=$(basename $(pwd))
 read -p "Package name [$defname]: " pkgname
 pkgname=${pkgname:-$defname}
 
-git ls-files | xargs -I _ sed "s/NAME/$pkgname/g" _ -i
+defauth=$(git config --get user.name)
+read -p "Author name [$defauth]: " authname
+authname=${authname:-$defauth}
 
-mv "NAME.cabal" $pkgname.cabal
+defmail=$(git config --get user.email)
+read -p "Author name [$defmail]: " authmail
+authmail=${authmail:-$defmail}
+
+currentyear=$(date +"%Y")
+
+git ls-files | xargs -I _ sed "s/PKGNAME/$pkgname/g" _ -i
+git ls-files | xargs -I _ sed "s/AUTHNAME/$authname/g" _ -i
+git ls-files | xargs -I _ sed "s/EMAIL/$authmail/g" _ -i
+git ls-files | xargs -I _ sed "s/CURRENTYEAR/$currentyear/g" _ -i
+
+mv "PKGNAME.cabal" $pkgname.cabal
 
 rm -- "$0" # delete self
 

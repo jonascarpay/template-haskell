@@ -1,5 +1,5 @@
 cabal-version:   2.4
-name:            NAME
+name:            PKGNAME
 version:         0
 license:         BSD-3-Clause
 build-type:      Simple
@@ -7,12 +7,12 @@ extra-doc-files:
   README.md
   CHANGELOG.md
 
--- license-file:    LICENSE
--- author:          Bob Saget
--- maintainer:      Bob Saget <bob.saget@hotmail.com>
--- copyright:       2020 Bob Saget
--- category:        CATEGORIES
--- tested-with:     GHC ==8.8.3
+license-file:    LICENSE
+author:          AUTHNAME
+maintainer:      AUTHNAME <EMAIL>
+copyright:       CURRENTYEAR AUTHNAME
+category:        CATEGORIES
+tested-with:     GHC ==8.8.3
 
 common common-options
   build-depends:    base ^>=4.13.0.0
@@ -30,33 +30,33 @@ library
     , containers
     , mtl
 
-executable NAME
+executable PKGNAME
   import:         common-options
   hs-source-dirs: app
   main-is:        Main.hs
-  build-depends:  NAME
+  build-depends:  PKGNAME
   ghc-options:    -threaded -rtsopts -with-rtsopts=-N
 
-test-suite NAME-test
+test-suite PKGNAME-test
   import:         common-options
   type:           exitcode-stdio-1.0
   hs-source-dirs: test
   main-is:        Spec.hs
   build-depends:
-    , NAME
+    , PKGNAME
     , tasty
     , tasty-hunit
     , tasty-quickcheck
 
   ghc-options:    -threaded -rtsopts -with-rtsopts=-N
 
-benchmark NAME-bench
+benchmark PKGNAME-bench
   import:         common-options
   type:           exitcode-stdio-1.0
   hs-source-dirs: bench
   main-is:        Main.hs
   build-depends:
     , criterion
-    , NAME
+    , PKGNAME
 
   ghc-options:    -threaded -rtsopts -with-rtsopts=-N
