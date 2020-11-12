@@ -20,8 +20,7 @@ common common-options
   ghc-options:
     -Wall -Wcompat -Widentities -Wincomplete-uni-patterns
     -Wincomplete-record-updates -Wredundant-constraints
-    -fhide-source-paths -Wmissing-export-lists -Wpartial-fields
-    -Wmissing-deriving-strategies
+    -fhide-source-paths -Wpartial-fields
 
 library
   import:          common-options
@@ -31,25 +30,33 @@ library
     , containers
     , mtl
 
--- executable NAME
---   import:         common-options
---   hs-source-dirs: app
---   main-is:        Main.hs
---   build-depends:  NAME
---   ghc-options:    -threaded -rtsopts -with-rtsopts=-N
+executable NAME
+  import:         common-options
+  hs-source-dirs: app
+  main-is:        Main.hs
+  build-depends:  NAME
+  ghc-options:    -threaded -rtsopts -with-rtsopts=-N
 
--- test-suite NAME-test
---   import:         common-options
---   type:           exitcode-stdio-1.0
---   hs-source-dirs: test
---   main-is:        Spec.hs
---   build-depends:  NAME
---   ghc-options:    -threaded -rtsopts -with-rtsopts=-N
+test-suite NAME-test
+  import:         common-options
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: test
+  main-is:        Spec.hs
+  build-depends:
+    , NAME
+    , tasty
+    , tasty-hunit
+    , tasty-quickcheck
 
--- benchmark NAME-benchmark
---   import:         common-options
---   type:           exitcode-stdio-1.0
---   hs-source-dirs: benchmark
---   main-is:        Main.hs
---   build-depends:  NAME
---   ghc-options:    -threaded -rtsopts -with-rtsopts=-N
+  ghc-options:    -threaded -rtsopts -with-rtsopts=-N
+
+benchmark NAME-bench
+  import:         common-options
+  type:           exitcode-stdio-1.0
+  hs-source-dirs: bench
+  main-is:        Main.hs
+  build-depends:
+    , criterion
+    , NAME
+
+  ghc-options:    -threaded -rtsopts -with-rtsopts=-N
