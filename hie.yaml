@@ -1,0 +1,10 @@
+cradle:
+  multi:
+    # - path: "ignore/"
+    #   config: {cradle: {none: }}
+
+    - path: "src"
+      config: {cradle: {cabal: {component: "lib:NAME"}}}
+
+    # - path: "app"
+    #   config: {cradle: {cabal: {component: "NAME:NAME"}}}
