@@ -8,9 +8,9 @@ extra-doc-files:
   CHANGELOG.md
 
 -- license-file:    LICENSE
--- author:          FULLNAME
--- maintainer:      FULLNAME <EMAIL>
--- copyright:       2020 FULLNAME
+-- author:          Bob Saget
+-- maintainer:      Bob Saget <bob.saget@hotmail.com>
+-- copyright:       2020 Bob Saget
 -- category:        CATEGORIES
 -- tested-with:     GHC ==8.8.3
 
