@@ -11,8 +11,9 @@ license-file:    LICENSE
 author:          AUTHNAME
 maintainer:      AUTHNAME <EMAIL>
 copyright:       CURRENTYEAR AUTHNAME
-category:        CATEGORIES
-tested-with:     GHC ==8.8.3
+
+-- tested-with:     GHC ==8.8.3
+-- category:        CATEGORIES
 
 common common-options
   build-depends:    base ^>=4.13.0.0
