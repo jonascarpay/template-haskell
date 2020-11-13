@@ -7,4 +7,10 @@ cradle:
       config: {cradle: {cabal: {component: "lib:PKGNAME"}}}
 
     - path: "app"
-      config: {cradle: {cabal: {component: "PKGNAME:PKGNAME"}}}
+      config: {cradle: {cabal: {component: "PKGNAME:PKGNAME-exe"}}}
+
+    - path: "test"
+      config: {cradle: {cabal: {component: "PKGNAME:PKGNAME-test"}}}
+
+    - path: "bench"
+      config: {cradle: {cabal: {component: "PKGNAME:PKGNAME-bench"}}}

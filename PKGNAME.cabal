@@ -31,7 +31,7 @@ library
     , containers
     , mtl
 
-executable PKGNAME
+executable PKGNAME-exe
   import:         common-options
   hs-source-dirs: app
   main-is:        Main.hs
