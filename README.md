@@ -8,7 +8,6 @@ Uses [`haskell.nix`](https://github.com/input-output-hk/haskell.nix) to get `ghc
 
   1. prompt you for a package name, author name, email
   2. replace all occurrences of `PKGNAME`, `AUTHNAME`, `EMAIL`, and  `CURRENTYEAR`
+  3. create a simple `README.md`
   4. delete `wizard.sh`
-  3. reinitialize the git history
-
-[Homepage](https://github.com/jonascarpay/template-haskell)
+  5. reinitialize the git history

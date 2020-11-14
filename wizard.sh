@@ -21,7 +21,10 @@ git ls-files | xargs -I _ sed "s/CURRENTYEAR/$currentyear/g" _ -i
 
 mv "PKGNAME.cabal" $pkgname.cabal
 
-rm -- "$0" # delete self
+rm README.md
+echo "# $pkgname" >README.md
+
+rm wizard.sh
 
 rm -rf .git
 git init
