@@ -1,6 +1,4 @@
-# PKGNAME
-
-Template for Haskell + Nix projects.
+## Template for Haskell + Nix projects.
 
 Uses [`haskell.nix`](https://github.com/input-output-hk/haskell.nix) to get `ghc` and compliant `ormolu`, `ghcide`, and `hlint`.
 
