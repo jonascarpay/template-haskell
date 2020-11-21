@@ -1,2 +1,5 @@
 packages:
   ./
+
+package NAME
+  tests: True
