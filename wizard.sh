@@ -22,7 +22,9 @@ git ls-files | xargs -I _ sed "s/CURRENTYEAR/$currentyear/g" _ -i
 mv "PKGNAME.cabal" $pkgname.cabal
 
 rm README.md
-echo "# $pkgname" >README.md
+echo "# $pkgname" >>README.md
+echo "" >>README.md
+echo "generated with [template-haskell](https://github.com/jonascarpay/template-haskell)" >>README.md
 
 rm wizard.sh
 
