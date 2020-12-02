@@ -1,5 +1,5 @@
 packages:
   ./
 
-package NAME
+package PKGNAME
   tests: True
