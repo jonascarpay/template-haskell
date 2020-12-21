@@ -1,12 +1,20 @@
-let hsPkgs = import ./.;
-in hsPkgs.shellFor {
+let
+  hsPkgs = import ./.;
+  pkgs = import <nixpkgs> { };
+  ormolu = hsPkgs.haskell-nix.tool hsPkgs.projectArgs.compiler-nix-name "ormolu" "0.1.4.1";
+in
+hsPkgs.shellFor {
   withHoogle = true;
   tools = {
     cabal = "3.2.0.0";
-    hlint = "3.1.5";
+    hlint = "3.2.2";
     ghcid = "0.8.7";
-    ghcide = "0.2.0";
-    ormolu = "0.1.0.0";
+    haskell-language-server = "0.6.0";
   };
+  buildInputs = [
+    (pkgs.writeShellScriptBin "ormolu" ''
+      ormolu --ghc-opt=-XImportQualifiedPost $@
+    '')
+  ];
   exactDeps = true;
 }
