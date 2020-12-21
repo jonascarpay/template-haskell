@@ -4,8 +4,8 @@ version:         0
 license:         BSD-3-Clause
 build-type:      Simple
 extra-doc-files:
-  README.md
   CHANGELOG.md
+  README.md
 
 license-file:    LICENSE
 author:          AUTHNAME
@@ -16,7 +16,7 @@ copyright:       CURRENTYEAR AUTHNAME
 -- category:        CATEGORIES
 
 common common-options
-  build-depends:    base ^>=4.13.0.0
+  build-depends:    base >=4.13.0.0 && <5
   default-language: Haskell2010
   ghc-options:
     -Wall -Wcompat -Widentities -Wincomplete-uni-patterns
