@@ -15,7 +15,10 @@ let
   pkgsArgs = haskellNix.nixpkgsArgs;
   overlay = self: _: {
     hsPkgs = self.haskell-nix.project {
-      src = self.haskell-nix.haskellLib.cleanGit { src = ./.; };
+      src = self.haskell-nix.haskellLib.cleanGit {
+        src = ./.;
+        name = "PKGNAME";
+      };
       compiler-nix-name = "ghc8102";
     };
   };
