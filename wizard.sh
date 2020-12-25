@@ -9,7 +9,7 @@ read -p "Author name [$defauth]: " authname
 authname=${authname:-$defauth}
 
 defmail=$(git config --get user.email)
-read -p "Author name [$defmail]: " authmail
+read -p "Author email [$defmail]: " authmail
 authmail=${authmail:-$defmail}
 
 currentyear=$(date +"%Y")
