@@ -11,7 +11,6 @@ hsPkgs.shellFor {
   withHoogle = true;
   tools = {
     cabal = "3.2.0.0";
-    hlint = "3.2.3";
     ghcid = "0.8.7";
     haskell-language-server = "0.6.0";
   };
