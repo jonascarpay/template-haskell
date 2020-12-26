@@ -17,7 +17,7 @@ extra-doc-files:
 -- synopsis:        one-line synopsis
 
 common common-options
-  build-depends:    base >=4.13.0.0 && <5
+  build-depends:    base >=4.9 && <5
   default-language: Haskell2010
   ghc-options:
     -Wall -Wcompat -Widentities -Wincomplete-uni-patterns
