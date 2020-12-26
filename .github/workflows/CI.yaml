@@ -14,8 +14,11 @@ jobs:
         with:
           name: jmc
           signingKey: '${{ secrets.CACHIX_SIGNING_KEY }}'
-      - run: nix build -L -f ./pkgs.nix hsPkgs.PKGNAME.checks
-      - name: "build nix-shell"
+      - name: Build build environment
+        run: nix-shell -E '(import ./pkgs.nix).hsPkgs.shellFor {}' --run "echo OK"
+      - name: Build and test package
+        run: nix build -L -f ./pkgs.nix hsPkgs.PKGNAME.checks
+      - name: Build shell tools
         run: nix-shell --run "echo OK"
 
   stack-build:
