@@ -14,9 +14,12 @@ jobs:
         with:
           name: jmc
           authToken: '${{ secrets.CACHIX_AUTH_TOKEN }}'
-      - run: nix build -L '(import ./pkgs.nix).hsPkgs.shellFor {}'
-      - run: nix build -L -f pkgs.nix hsPkgs.PKGNAME.checks
-      - run: nix build -L -f shell.nix
+      - name: Build dependencies
+        run: nix build -L '(import ./pkgs.nix).hsPkgs.shellFor {}'
+      - name: Build PKGNAME
+        run: nix build -L -f pkgs.nix hsPkgs.PKGNAME.checks
+      - name: Build development tools
+        run: nix build -L -f shell.nix
 
   stack-build:
     name: Stack ${{ matrix.resolver }} on ${{ matrix.os }} (${{ matrix.required }})
