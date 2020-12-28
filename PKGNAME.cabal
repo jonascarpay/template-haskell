@@ -15,6 +15,10 @@ extra-doc-files:
 -- category:
 -- description:     description
 -- synopsis:        one-line synopsis
+-- homepage:        https://github.com/FIXME/PKGNAME#readme
+-- source-repository head
+--   type:     git
+--   location: git://github.com/FIXME/PKGNAME.git
 
 common common-options
   build-depends:    base >=4.9 && <5
