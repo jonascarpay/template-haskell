@@ -2,8 +2,8 @@ let
   haskellNix =
     let
       # 2020-12-21
-      commit = "67ab92fc6d76a9ef12f49f83dd1f19665d5445d7";
-      sha256 = "0985zdsx434ykaj44ynnd73qsjl18l68172qgnwb7j1q82wgldsw";
+      commit = "9047c0f449b208d416c459888f50d98ea6c7cc0e";
+      sha256 = "0lk23n77w9vq2kmd4accql9wsg3i0afzjpxmh5qnx7g1hpxsbmzs";
     in
     import
       (builtins.fetchTarball {
