@@ -2,6 +2,8 @@
 
 Uses IOHK's [`haskell.nix`](https://github.com/input-output-hk/haskell.nix) for setting up an environment containing `ghc`, `cabal`, `hoogle`, `ormolu`, and `haskell-language-server`.
 
+See [the accompanying blog post](https://jonascarpay.com/posts/2021-01-28-haskell-project-template.html) for more information.
+
 ### Usage
 
 Clone/copy this repo to the intended package location, `cd` into it, and run `./wizard.sh`.
