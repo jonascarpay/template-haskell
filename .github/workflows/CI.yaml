@@ -40,12 +40,12 @@ jobs:
       - uses: haskell/actions/setup@v1
         with:
           enable-stack: true
-      - uses: actions/cache@v2
-        with:
-          path: |
-            ~/.stack
-            .stack-work
-          key: stack-cache-${{ matrix.os }}-${{ matrix.resolver }}-${{ hashFiles('**/*.cabal') }}
+      # - uses: actions/cache@v2
+      #   with:
+      #     path: |
+      #       ~/.stack
+      #       .stack-work
+      #     key: stack-cache-${{ matrix.os }}-${{ matrix.resolver }}-${{ hashFiles('**/*.cabal') }}
       - run: stack init --resolver ${{ matrix.resolver }}
       - run: stack build --resolver ${{ matrix.resolver }} --only-dependencies
       - run: stack build --resolver ${{ matrix.resolver }}
