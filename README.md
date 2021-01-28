@@ -6,9 +6,14 @@ See [the accompanying blog post](https://jonascarpay.com/posts/2021-01-28-haskel
 
 ### Usage
 
-Clone/copy this repo to the intended package location, `cd` into it, and run `./wizard.sh`.
+- Make sure you properly set up the [IOHK cache](https://input-output-hk.github.io/haskell.nix/tutorials/getting-started/#setting-up-the-binary-cache).
 
-Make sure you properly set up the [IOHK cache](https://input-output-hk.github.io/haskell.nix/tutorials/getting-started/#setting-up-the-binary-cache).
+- Clone/copy this repo to the intended package location, and run the wizard.
+```bash
+git clone https://github.com/jonascarpay/template-haskell <my-project>
+cd <my-project>
+./wizard.sh
+```
 
 ### CI
 
