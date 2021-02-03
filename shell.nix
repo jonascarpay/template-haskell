@@ -1,11 +1,14 @@
+# To have ormolu automatically format imports using the ImportQualifiedPost syntax,
+# comment out `ormolu` from the `tools` section, and uncomment `buildInputs`
 let
   pkgs = import ./pkgs.nix;
   hsPkgs = pkgs.hsPkgs;
-  ormolu = pkgs.haskell-nix.tool hsPkgs.projectArgs.compiler-nix-name "ormolu" "latest";
-  # Warning: only works with ghc 8.10 and up!
-  ormolu-wrapped = pkgs.writeShellScriptBin "ormolu" ''
-    ${ormolu}/bin/ormolu --ghc-opt=-XImportQualifiedPost $@
-  '';
+  ormolu-wrapped =
+    let ormolu = pkgs.haskell-nix.tool hsPkgs.projectArgs.compiler-nix-name "ormolu" "latest";
+    in
+    pkgs.writeShellScriptBin "ormolu" ''
+      ${ormolu}/bin/ormolu --ghc-opt=-XImportQualifiedPost $@
+    '';
 in
 hsPkgs.shellFor {
   withHoogle = true;
@@ -13,7 +16,8 @@ hsPkgs.shellFor {
     cabal = "latest";
     ghcid = "latest";
     haskell-language-server = "latest";
+    ormolu = "latest";
   };
-  buildInputs = [ ormolu-wrapped ];
+  # buildInputs = [ ormolu-wrapped ];
   exactDeps = true;
 }
