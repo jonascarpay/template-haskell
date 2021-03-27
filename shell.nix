@@ -17,6 +17,7 @@ hsPkgs.shellFor {
     ghcid = "latest";
     haskell-language-server = "latest";
     ormolu = "latest";
+    hlint = "latest";
   };
   # buildInputs = [ ormolu-wrapped ];
   exactDeps = true;
