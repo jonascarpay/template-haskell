@@ -2,8 +2,8 @@ let
   haskellNix =
     let
       # 2020-12-21
-      commit = "9047c0f449b208d416c459888f50d98ea6c7cc0e";
-      sha256 = "0lk23n77w9vq2kmd4accql9wsg3i0afzjpxmh5qnx7g1hpxsbmzs";
+      commit = "11ac089c9ad436defc77fd096e00bebc42adda1d";
+      sha256 = "1mwkpg1cspv94k9wz02g99lq5yk6c1mhd4jpl0ap62n2kajz4jff";
     in
     import
       (builtins.fetchTarball {
@@ -19,7 +19,7 @@ let
         src = ./.;
         name = "PKGNAME";
       };
-      compiler-nix-name = "ghc8102";
+      compiler-nix-name = "ghc901";
     };
   };
 in
