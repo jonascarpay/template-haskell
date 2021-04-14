@@ -11,7 +11,8 @@ let
         inherit sha256;
       })
       { };
-  pkgsSrc = haskellNix.sources.nixpkgs-2009;
+  # It might be worth setting this to a more stable channel, but see https://github.com/jonascarpay/template-haskell/issues/9
+  pkgsSrc = haskellNix.sources.nixpkgs-unstable;
   pkgsArgs = haskellNix.nixpkgsArgs;
   overlay = self: _: {
     hsPkgs = self.haskell-nix.project {
