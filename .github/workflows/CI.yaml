@@ -40,6 +40,8 @@ jobs:
       - uses: haskell/actions/setup@v1
         with:
           enable-stack: true
+      ## For some reason, stack caching seems to be very brittle, and cause a lot of build failures.
+      ## I haven't investigated very thoroughly what to best do about this, but for now, I'm just not caching stack builds.
       # - uses: actions/cache@v2
       #   with:
       #     path: |
