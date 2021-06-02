@@ -2,18 +2,16 @@
 
 Uses IOHK's [`haskell.nix`](https://github.com/input-output-hk/haskell.nix) for setting up an environment containing `ghc`, `cabal`, `hoogle`, `ormolu`, and `haskell-language-server`.
 
-See [the accompanying blog post](https://jonascarpay.com/posts/2021-01-28-haskell-project-template.html) for more information.
-
 ### Usage
 
-- Make sure you properly set up the [IOHK cache](https://input-output-hk.github.io/haskell.nix/tutorials/getting-started/#setting-up-the-binary-cache).
-
-- Clone/copy this repo to the intended package location, and run the wizard.
+Clone/copy this repo to the intended package location, and run the wizard.
 ```bash
 git clone https://github.com/jonascarpay/template-haskell <my-project>
 cd <my-project>
 ./wizard.sh
 ```
+
+See [the accompanying blog post](https://jonascarpay.com/posts/2021-01-28-haskell-project-template.html) for more information.
 
 ### CI
 
