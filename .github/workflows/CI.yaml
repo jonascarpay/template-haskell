@@ -26,7 +26,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        resolver: [ nightly, lts-17, lts-16, lts-15, lts-14 ]
+        resolver: [ nightly, lts-18, lts-17, lts-16, lts-15, lts-14 ]
         os: [ macos-latest, ubuntu-latest ]
         required: [ required ]
         # include:
