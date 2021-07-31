@@ -18,8 +18,11 @@ jobs:
         run: nix develop --command ghc --version
       - name: Build PKGNAME
         run: nix build -L
+      # TODO `nix flake check` is currently system-dependent but should be used here
       - name: Build PKGNAME checks
-        run: nix flake check
+        run: nix build -L '.#checks.x86_64-linux."PKGNAME:test:PKGNAME-test"'
+      - name: Build PKGNAME shell
+        run: nix build -L '.#devShell.x86_64-linux'
 
   stack-build:
     name: Stack ${{ matrix.resolver }} on ${{ matrix.os }} (${{ matrix.required }})
