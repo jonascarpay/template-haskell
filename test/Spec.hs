@@ -1,12 +1,8 @@
-import Test.Tasty
-import Test.Tasty.ExpectedFailure
-import Test.Tasty.HUnit
-import Test.Tasty.QuickCheck
+import Test.Hspec
 
 main :: IO ()
 main =
-  defaultMain $
-    testGroup
-      "PKGNAME-test"
-      [ expectFail $ testCase "war is peace" $ 2 + 2 @?= (5 :: Int)
-      ]
+  hspec $
+    describe "PKGNAME-test" $
+      it "works" $
+        2 + 2 `shouldBe` (4 :: Int)

@@ -49,11 +49,10 @@ test-suite PKGNAME-test
   hs-source-dirs: test
   main-is:        Spec.hs
   build-depends:
+    , hspec
+    , HUnit
     , PKGNAME
-    , tasty
-    , tasty-expected-failure
-    , tasty-hunit
-    , tasty-quickcheck
+    , QuickCheck
 
   ghc-options:    -threaded -rtsopts -with-rtsopts=-N
 
