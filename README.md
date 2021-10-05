@@ -13,6 +13,10 @@ cd <my-project>
 
 See [the accompanying blog post](https://jonascarpay.com/posts/2021-01-28-haskell-project-template.html) for more information.
 
+### Flakes support
+
+As described in the post, the `flakes` branch contains a Flakes-based version of this repo.
+
 ### CI
 
 CI consists of a Stack matrix, Cabal matrix, and Nix build.
