@@ -6,6 +6,9 @@ indent() {
 }
 
 PKGNAME_DEFAULT="$(basename "$(pwd)")"
+if [ "$PKGNAME_DEFAULT" = "template-haskell" ]; then
+    PKGNAME_DEFAULT="my-project"
+fi
 read -r -p "Package name [$PKGNAME_DEFAULT]: " PKGNAME
 PKGNAME=${PKGNAME:-$PKGNAME_DEFAULT}
 
