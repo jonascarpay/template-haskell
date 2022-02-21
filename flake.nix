@@ -15,11 +15,15 @@
               compiler-nix-name = "ghc8107";
               shell = {
                 tools = {
-                  cabal = { };
-                  ghcid = { };
-                  haskell-language-server = { };
-                  hlint = { };
-                  ormolu = { };
+                  cabal = "latest";
+                  ghcid = "latest";
+                  haskell-language-server = "latest";
+                  hlint = "latest";
+                  # See https://github.com/input-output-hk/haskell.nix/issues/1337
+                  ormolu = {
+                    version = "latest";
+                    modules = [ ({ lib, ... }: { options.nonReinstallablePkgs = lib.mkOption { apply = lib.remove "Cabal"; }; }) ];
+                  };
                 };
                 ## ormolu that uses ImportQualifiedPost.
                 ## To use, remove ormolu from the shell.tools section above, and uncomment the following lines.
