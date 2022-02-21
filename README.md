@@ -19,6 +19,9 @@ Since both I and all users I've talked to never use the non-flakes version anymo
 So, **`template-haskell` is now flakes-only**.
 If you disagree with this decision, and are prepared to maintain a non-flakes version, please open an issue and we'll work something out.
 
+Don't worry if you have not used flakes before, the practical implications of this change are minimal.
+After [enabling flakes support](https://nixos.wiki/wiki/Flakes#Installing_flakes), just use `nix build` and `nix develop` instead of `nix-build` and `nix-shell`, respectively.
+
 ### CI
 
 CI consists of a Stack matrix, Cabal matrix, and Nix build.
