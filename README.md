@@ -13,9 +13,11 @@ cd <my-project>
 
 See [the accompanying blog post](https://jonascarpay.com/posts/2021-01-28-haskell-project-template.html) for more information.
 
-### Flakes support
+### Flakes
 
-As described in the post, the `flakes` branch contains a Flakes-based version of this repo.
+Since both I and all users I've talked to never use the non-flakes version anymore, I have decided to drop support for it.
+So, **`template-haskell` is now flakes-only**.
+If you disagree with this decision, and are prepared to maintain a non-flakes version, please open an issue and we'll work something out.
 
 ### CI
 
