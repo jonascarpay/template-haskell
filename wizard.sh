@@ -47,13 +47,17 @@ echo "Cleaning up..."
     rm wizard.sh
 ) 2>&1 | indent
 
-echo "Reinitializing git..."
-(
-    set -x
-    rm -rf .git
-    git init
-    git add --all
-    git commit -m "Initial commit"
-) 2>&1 | indent
+read -e -p 'Reinitialize git history? [Y/n]? ' REINIT
+
+if [[ "$REINIT" != [Nn]* ]]; then
+    echo "Reinitializing git..."
+    (
+        set -x
+        rm -rf .git
+        git init
+        git add --all
+        git commit -m "Initial commit"
+    ) 2>&1 | indent
+fi
 
 echo "All set!"
