@@ -24,8 +24,5 @@ After [enabling flakes support](https://nixos.wiki/wiki/Flakes#Installing_flakes
 
 ### CI
 
-CI consists of a Stack matrix, Cabal matrix, and Nix build.
-To disable, remove the `.github` directory.
-
-The Nix build uses [my own public Cachix](https://app.cachix.org/cache/jmc) for caching.
-When starting out this is nice because it saves you from building GHC, but if you care a lot about the Nix build you will eventually want to switch this to something you have push access to.
+Default CI consists of a Stack matrix, Cabal matrix, and Nix build.
+Don't forget to look at `.github/workflows/CI.yaml` and tweak this to your project.
