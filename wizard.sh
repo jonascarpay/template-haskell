@@ -12,11 +12,11 @@ fi
 read -r -p "Package name [$PKGNAME_DEFAULT]: " PKGNAME
 PKGNAME=${PKGNAME:-$PKGNAME_DEFAULT}
 
-AUTHNAME_DEFAULT=$(git config --get user.name)
+AUTHNAME_DEFAULT=$(git config --default "Firstname Lastname" --get user.name)
 read -r -p "Author name [$AUTHNAME_DEFAULT]: " AUTHNAME
 AUTHNAME=${AUTHNAME:-$AUTHNAME_DEFAULT}
 
-EMAIL_DEFAULT=$(git config --get user.email)
+EMAIL_DEFAULT=$(git config --default "user@email.com" --get user.email)
 read -r -p "Author email [$EMAIL_DEFAULT]: " EMAIL
 EMAIL=${EMAIL:-$EMAIL_DEFAULT}
 
