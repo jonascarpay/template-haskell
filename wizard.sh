@@ -28,10 +28,10 @@ echo "Substituting placeholder variables..."
 (
     set -x
     git ls-files | xargs -I _ sed _ -i \
-        -e "s/PKGNAME/$PKGNAME/g" \
-        -e "s/AUTHNAME/$AUTHNAME/g" \
-        -e "s/EMAIL/$EMAIL/g" \
-        -e "s/CURRENTYEAR/$currentyear/g"
+        -e "s#PKGNAME#$PKGNAME#g" \
+        -e "s#AUTHNAME#$AUTHNAME#g" \
+        -e "s#EMAIL#$EMAIL#g" \
+        -e "s#CURRENTYEAR#$currentyear#g"
 ) 2>&1 | indent
 
 echo "Renaming files..."
