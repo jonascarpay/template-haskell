@@ -10,3 +10,6 @@
 
 - ignore:
     name: Use infix
+
+- ignore:
+    name: Avoid lambda using `infix`
