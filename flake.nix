@@ -21,18 +21,24 @@
           hspkgs = pkgs.haskellPackages;
         in
         {
-          devShell = hspkgs.shellFor {
-            withHoogle = true;
-            packages = p: [ p.PKGNAME ];
-            buildInputs = [
-              hspkgs.cabal-install
-              hspkgs.haskell-language-server
-              hspkgs.hlint
-              hspkgs.ormolu
-              pkgs.bashInteractive
-            ];
+          devShells = rec {
+            default = PKGNAME-shell;
+            PKGNAME-shell = hspkgs.shellFor {
+              withHoogle = true;
+              packages = p: [ p.PKGNAME ];
+              buildInputs = [
+                hspkgs.cabal-install
+                hspkgs.haskell-language-server
+                hspkgs.hlint
+                hspkgs.ormolu
+                pkgs.bashInteractive
+              ];
+            };
           };
-          defaultPackage = pkgs.PKGNAME;
+          packages = rec {
+            default = PKGNAME;
+            PKGNAME = pkgs.PKGNAME;
+          };
         };
     in
     { inherit overlay; } // inputs.flake-utils.lib.eachDefaultSystem perSystem;
