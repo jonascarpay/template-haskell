@@ -1,7 +1,7 @@
 {
   description = "PKGNAME";
 
-  inputs.nixpkgs.url = "github:NixOS/nixpkgs/release-23.11";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/release-24.05";
   inputs.flake-utils.url = "github:numtide/flake-utils";
 
   outputs = inputs:
