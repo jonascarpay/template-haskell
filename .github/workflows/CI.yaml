@@ -25,6 +25,17 @@ jobs:
       - name: Build PKGNAME shell
         run: nix build -L '.#devShells.x86_64-linux.default'
 
+  lint:
+    name: Lint & format
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: cachix/install-nix-action@v31
+      - name: Check formatting (ormolu)
+        run: nix develop --command ormolu --mode check $(git ls-files '*.hs')
+      - name: Lint (hlint)
+        run: nix develop --command hlint .
+
   stack-build:
     name: Stack ${{ matrix.resolver }} on ${{ matrix.os }}
     strategy:
