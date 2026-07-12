@@ -33,7 +33,8 @@ common common-options
   ghc-options:
     -Wall -Wcompat -Widentities -Wincomplete-uni-patterns
     -Wincomplete-record-updates -Wredundant-constraints
-    -fhide-source-paths -Wpartial-fields
+    -fhide-source-paths -Wpartial-fields -Woperator-whitespace
+    -Wmissing-deriving-strategies -Winvalid-haddock
 
 library
   import:          common-options
