@@ -1,4 +1,4 @@
 import Lib
 
 main :: IO ()
-main = putStrLn "heyyyyyyyyyyyyyyyyyyyy"
+main = error "benchmarks not yet implemented"
